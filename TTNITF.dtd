@@ -1,0 +1,765 @@
+<!--*********************************************************************-->
+<!--                                                                    --> 
+<!--                                            2013-03-06              --> 
+<!-- DOCUMENT ELEMENT
+ TTNITF                                                                 -->
+<!--                                  KOMPLETT VERSION 3.4              -->
+<!--                                                                    --> 
+<!-- Denna DTD gäller TT:s textformat TTNITF.                           --> 
+<!-- Den är komplett för text, webbnyheter, sportresultat               --> 
+<!-- men även börsmaterial som inte längre skickas ut i det här formatet. --> 
+<!--                                                                    --> 
+<!-- För en mer komplett beskrivning över de olika delarna se           --> 
+<!-- TTNITF_version3.4.doc/pdf                                          --> 
+<!--                                                                    --> 
+<!--                                                                    --> 
+<!--                                                                    --> 
+<!--*********************************************************************-->
+<!-- EXTERNAL ENTITY DECLARATIONS EXCEPT ELEMENTS AND DTDS             -->
+<!--*********************************************************************-->
+<!-- COMMENTS                                                           --> 
+<!--     IH lade till BNG som RUBBE-attribut                                -->
+<!--     IH lade till FRC som RUBBE-attribut                                -->
+<!--     JL lade till MDE som RUBBE-attribut                            -->
+<!--     JL lade till FRAGA och SVAR                            -->
+<!--     JL lade till element o attribut som används i OS                            -->
+<!--    JL lade till RESSORT|RESTYP|RESDISCIPLINE|RESSTAGE i RESVAD samt attributet RESID för OS -->
+<!--     JL lade till elementet SPEKMETA med underelement samt attributet QVAL i PLAC  --> 
+<!--     JL lade till elementet EMBARGODATETIME för att ange exakt datum och tid när något får publiceras.  --> 
+<!--    JL lade till TAKE i HEAD som kan användas för att ange numret på ett take i en serie. -->
+<!--     JL lade till FAKTATEXT och BAKGRUNDTEXT till BODY. De hade tappats bort i senaste versionen     -->
+
+<!--                                                                    --> 
+<!--*********************************************************************-->
+<!-- NOTATION DECLARATIONS                                              --> 
+<!--*********************************************************************-->
+<!-- ENTITY DECLARATIONS FOR STAND-ALONE MODELGROUPS                    --> 
+<!--*********************************************************************-->
+<!ENTITY ouml "&#246;">
+<!ENTITY Ouml "&#214;">
+<!ENTITY auml "&#228;">
+<!ENTITY Auml "&#196;">
+<!ENTITY aring "&#229;">
+<!ENTITY Aring "&#197;">
+<!ENTITY eacute "&#233;">
+<!ENTITY uacute "&#250;">
+<!ENTITY tstr "-">
+<!ENTITY nbsp " ">
+<!ENTITY aacute "&#225;">
+<!ENTITY Aacute "&#193;">
+<!ENTITY aelig "&#230;">
+<!ENTITY Aelig "&#198;">
+<!ENTITY agrave "&#224;">
+<!ENTITY Agrave "&#192;">
+<!ENTITY Acirc "&#194;">
+<!ENTITY acirc "&#226;">
+<!ENTITY atilde "&#227;">
+<!ENTITY Atilde "&#195;">
+<!ENTITY ccedil "&#231;">
+<!ENTITY Ccedil "&#199;">
+<!ENTITY Eacute "&#201;">
+<!ENTITY egrave "&#232;">
+<!ENTITY Egrave "&#200;">
+<!ENTITY ecirc "&#234;">
+<!ENTITY Ecirc "&#202;">
+<!ENTITY euml "&#235;">
+<!ENTITY Euml "&#203;">
+<!ENTITY icirc "&#238;">
+<!ENTITY Icirc "&#206;">
+<!ENTITY iacute "&#237;">
+<!ENTITY Iacute "&#205;">
+<!ENTITY igrave "&#236;">
+<!ENTITY Igrave "&#204;">
+<!ENTITY iuml "&#239;">
+<!ENTITY Iuml "&#207;">
+<!ENTITY ntilde "&#241;">
+<!ENTITY Ntilde "&#209;">
+<!ENTITY ograve "&#242;">
+<!ENTITY Ograve "&#210;">
+<!ENTITY oacute "&#243;">
+<!ENTITY Oacute "&#211;">
+<!ENTITY oslash "&#248;">
+<!ENTITY Oslash "&#216;">
+<!ENTITY Ocirc "&#212;">
+<!ENTITY ocirc "&#244;">
+<!ENTITY otilde "&#245;">
+<!ENTITY Otilde "&#213;">
+<!ENTITY uuml "&#252;">
+<!ENTITY Uuml "&#220;">
+<!ENTITY Uacute "&#218;">
+<!ENTITY ucirc "&#251;">
+<!ENTITY Ucirc "&#219;">
+<!ENTITY Ugrave "&#217;">
+<!ENTITY ugrave "&#249;">
+<!ENTITY yacute "&#253;">
+<!ENTITY Yacute "&#221;">
+<!ENTITY yuml "&#255;">
+<!ENTITY szlig "&#223;">
+<!ENTITY eth "&#240;">
+<!ENTITY ETH "&#208;">
+<!ENTITY thorn "&#254;">
+<!ENTITY THORN "&#222;">
+<!--*********************************************************************-->
+<!-- ELEMENT DECLARATIONS                                               --> 
+<!--*********************************************************************-->
+<!ELEMENT ACTADV EMPTY>
+<!-- 2:42 Action adviced-->
+<!ELEMENT ak (#PCDATA)>
+<!-- aktiekurs i UTLAKT--> 
+<!ELEMENT an (#PCDATA)>
+<!-- antal i AKTIE-->
+<!ELEMENT anamn (#PCDATA)>
+<!-- namntagg i AKTIE--> 
+<!ELEMENT ar (#PCDATA)>
+<!-- ar i NUMF --> 
+<!ELEMENT BF (#PCDATA)>
+<!-- Forlorade matcher borta --> 
+<!ELEMENT BFS (#PCDATA)>
+<!-- Forlorade matcher borta efter sudden--> 
+<!ELEMENT BFSS (#PCDATA)>
+<!-- Forlorade matcher borta efter straffar--> 
+<!ELEMENT BG (#PCDATA)>
+<!-- Gjorda mal borta --> 
+<!ELEMENT bh (#PCDATA)>
+<!-- Hogst idag i AKTIE--> 
+<!ELEMENT bht (#PCDATA)>
+<!-- Hogst idag i TEO--> 
+<!ELEMENT bhk (#PCDATA)>
+<!-- Hogst idag i KON--> 
+<!ELEMENT BHEAD (BHR+)>
+<!-- Borstabellheader med en eller flera headerrader-->
+<!ELEMENT BHR ((hb?, ko?, lb?, ud?, da?, anamn, ch, bu, sa, bh?, bl?, bs, an?) | (bnamn, vrr, vr2, vr5, vr1?,vr10?, brr, br2, br5, br1?,br10?) | (fnamn, nav, utd, utb, df1, df2?) | (hnamn, hl1, hl2) | (inamn, va?, inx, dk?, ch) | (ff?, kd?, ra?, di?, knamn, ch, bu, sa, bhk, blt?, kv?, no?) | (ar, em, fe, hu, tj) | (onamn, fd, ok, kr?, sk, sr?, ch?, br, bk, no?) | (sl, inx, kk, sk, bso, vo) | (pa, dr, ch, pk, sk, sb) | (thb?, la?, en?, tk?, tnamn, ch, bu, sa, bht, blt?, bst?) | (unamn, ak, fk, df1?) | (va, ku, ch, ph))*>
+<!--En sorts headerrad-->
+<!ELEMENT BI (#PCDATA)>
+<!-- Inslappta mal borta --> 
+<!ELEMENT BILD (BILDFIL, BILDTEXT, BILDSKAPARE)>
+<!--Information om en bild-->
+<!ELEMENT BILDFIL (#PCDATA)>
+<!-- Namn pa bildfilen-->
+<!ELEMENT BILDSKAPARE (#PCDATA)>
+<!-- Skapare av bilden-->
+<!ELEMENT BILDTEXT (P+)>
+<!-- Bildtext till bilden-->
+<!ELEMENT bk (#PCDATA)>
+<!-- betalkurs i OBL--> 
+<!ELEMENT bl (#PCDATA)>
+<!-- Lagst idag i AKTIE --> 
+<!ELEMENT blt (#PCDATA)>
+<!-- Lagst idag i TEO--> 
+<!ELEMENT blk (#PCDATA)>
+<!-- Lagst idag i KON--> 
+<!ELEMENT BLAG (#PCDATA)>
+<!-- Namn pa bortalag i ett matchresultat--> 
+<!ELEMENT BLANKRAD EMPTY>
+<!-- For att kunna lagga blankrader for gamla formatet-->
+<!ELEMENT bnamn (#PCDATA)>
+<!-- Laneinstitut i BORA--> 
+<!ELEMENT BO (#PCDATA)>
+<!-- oavgjorda matcher borta --> 
+<!ELEMENT BODY (RUBBE?, ((TEXT*,FAKTATEXT*, BAKGRUNDTEXT*) | SPORTRES? | EKOTABELL?))>
+<!-- IIM 8:10 The actual content of the file-->
+<!ELEMENT br (#PCDATA)>
+<!-- betal ranta i OBL--> 
+<!ELEMENT brr (#PCDATA)>
+<!-- Bostadsratt rorlig ranta i BORA-->
+<!ELEMENT br1 (#PCDATA)>
+<!-- Bostadsratt ettars ranta i BORA-->
+<!ELEMENT br2 (#PCDATA)>
+<!-- Bostadsratt tvaars ranta i BORA-->
+<!ELEMENT br5 (#PCDATA)>
+<!-- Bostadsratt femars ranta i BORA-->
+<!ELEMENT br10 (#PCDATA)>
+<!-- Bostadsratt tioars ranta i BORA-->
+<!ELEMENT BRES (#PCDATA)>
+<!-- Bortares i ett matchresultat--> 
+<!ELEMENT BRODTEXT (P | CITAT | MELLIS | TABELL | UL | FRAGA | SVAR)*>
+<!--Sjalva brodtexten-->
+<!ELEMENT bs (#PCDATA)>
+<!-- sen bet i AKTIE-->
+<!ELEMENT bso (#PCDATA)>
+<!-- sen bet i OPT--> 
+<!ELEMENT bst (#PCDATA)>
+<!-- sen bet i TEO (VERKAR VaXLAT MED bl) --> 
+<!ELEMENT BTAB (BTR+)>
+<!-- Borstabell med en eller flera tabellrader-->
+<!ELEMENT BTR ((hb?, ko?, lb?, ud?, da?, anamn, ch, bu, sa, bh?, bl?, bs, an?) | (bnamn, vrr, vr2, vr5,  vr1?,vr10?, brr, br2, br5, br1?,br10?) | (fnamn, nav, utd, utb, df1, df2?) | (hnamn, hl1, hl2) | (inamn, va?, inx, dk?, ch) | (ff?, kd?, ra?, di?, knamn, ch, bu, sa, bhk, blt?, kv?, no?) | (ar, em, fe, hu, tj) | (onamn, fd, ok, kr?, sk, sr?, ch?, br, bk, no?) | (sl, inx, kk, sk, bso, vo) | (pa, dr, ch, pk, sk, sb) | (thb?, la?, en?, tk?, tnamn, ch, bu, sa, bht, blt?, bst?) | (unamn, ak, fk, df1?) | (va, ku, ch, ph))>
+<!--En sorts tabellrad-->
+<!ELEMENT bu (#PCDATA)>
+<!-- Kopkurs i AKTIE, TEO--> 
+<!ELEMENT BV (#PCDATA)>
+<!-- Vunna matcher borta --> 
+<!ELEMENT BVS (#PCDATA)>
+<!-- Vunna matcher borta efter sudden--> 
+<!ELEMENT BVSS (#PCDATA)>
+<!-- Vunna matcher borta efter straffar--> 
+<!ELEMENT BYLINE (#PCDATA)>
+<!-- byline pa skribent osv i textdelen-->
+<!ELEMENT CAPTION (#PCDATA)>
+<!-- 2:120 Caption-->
+<!ELEMENT ch (#PCDATA)>
+<!-- andr i AKTIE--> 
+<!ELEMENT CITAT (#PCDATA)>
+<!-- Citatstycken som kan finnas i ingress eller brodtext-->
+<!ELEMENT COUNTRY (#PCDATA)>
+<!-- En persons land i ett detaljerat os-resultat -->
+<!ELEMENT da (#PCDATA)>
+<!-- diravk i AKTIE--> 
+<!ELEMENT DAT (ORT, SOURCE)>
+<!--Dateringsrad-->
+<!ELEMENT DATESENT (#PCDATA)>
+<!-- 1:70 Date Sent. Obligatorisk vid utsandning.-->
+<!ELEMENT DEPARTMENT (#PCDATA)>
+<!-- En avdelning i SPEKMETA/DEPARTMENTS  -->
+<!ELEMENT DEPARTMENTS (DEPARTMENT*)>
+<!-- Fritt antal DEPARTMENTS i SPEKMETA  -->
+<!ELEMENT DEST (#PCDATA)>
+<!-- 1:05 Destination-->
+<!ELEMENT df1 (#PCDATA)>
+<!-- andring sedan senaste arsskifte i FOND--> 
+<!ELEMENT df2 (#PCDATA)>
+<!-- andring sedan tva arsskiften i FOND --> 
+<!ELEMENT dk (#PCDATA)>
+<!-- Under dagen i INDEX--> 
+<!ELEMENT di (#PCDATA)>
+<!-- direktavkastning i KON--> 
+<!ELEMENT dr (#PCDATA)>
+<!-- Dragningsnummer i PRE--> 
+<!ELEMENT DUEL (PERSON,PERSON)>
+<!--OS-resultat med dueller mellan personer eller lag-->
+<!ELEMENT EDSTAT (#PCDATA)>
+<!-- 2:07 Edit Status som ny version mm-->
+<!ELEMENT EKOTABELL (RUBRIK?, INGRESS?, MELLIS*, (BHEAD?,((FONDF?, OPTION?, MELLIS*, BLANKRAD?, BTAB?)+ |BRODTEXT?)*)*)>
+<!--Grundelementet i alla ekotabeller-->
+<!ELEMENT em (#PCDATA)>
+<!-- Datum och tid för embargo. Formatet följer det som gäller xs:datetime -->
+<!ELEMENT EMBARGODATETIME (#PCDATA) >
+<!-- emission i NUMF--> 
+<!ELEMENT en (#PCDATA)>
+<!-- en ratt ger i TEO--> 
+<!ELEMENT ENDSIZE (#PCDATA)>
+<!-- 9:10 Total size of objectdata-->
+<!ELEMENT EPAFAKTA (P+)>
+<!-- Fakta i ett matchresultatet uppdelat i stycken-->
+<!ELEMENT EPAPER (#PCDATA)>
+<!-- Periodsiffror etc i ett matchresultat--> 
+<!ELEMENT EPATEXT (P+)>
+<!-- Text om matchresultatet uppdelat i stycken-->
+<!ELEMENT EPAVAD (#PCDATA)>
+<!-- Vilken gren,klass osv ett enskilt matchresultat galler-->
+<!ELEMENT EPAVAR (#PCDATA)>
+<!-- Vilken plats ett enskilt matchresultat galler-->
+<!ELEMENT fd (#PCDATA)>
+<!-- forf dag i OBL--> 
+<!ELEMENT fe (#PCDATA)>
+<!-- femtio i NUMF--> 
+<!ELEMENT ff (#PCDATA)>
+<!-- forf dag i KON--> 
+<!ELEMENT FIFO EMPTY>
+<!-- 1:20 File Format. TTNIFT har nummer 27 hos IPTC-->
+<!ELEMENT FIFOVER EMPTY>
+<!-- 1:22 File Format Version-->
+<!ELEMENT FIXID (#PCDATA)>
+<!-- 2:22 Fixture Identifier-->
+<!ELEMENT fk (#PCDATA)>
+<!-- forra kursen i UTLAKT--> 
+<!ELEMENT FM (#PCDATA)>
+<!-- Forlorade matcher totalt --> 
+<!ELEMENT FMS (#PCDATA)>
+<!-- Forlorade matcher efter forlangning --> 
+<!ELEMENT fnamn (#PCDATA)>
+<!-- Namn i FOND--> 
+<!ELEMENT FONDF (#PCDATA)>
+<!-- Namn pa fondforvaltare i fondtabellerna-->
+<!ELEMENT FRAGA (#PCDATA)>
+<!-- Direkt fråga i brödtexten -->
+<!ELEMENT FSS (#PCDATA)>
+<!-- Forlorade matcher efter straffslagning --> 
+<!ELEMENT GM (#PCDATA)>
+<!-- Gjorda mal totalt --> 
+<!ELEMENT hb (#PCDATA)>
+<!-- 9798hogst i AKTIE --> 
+<!ELEMENT HEAD (MODVER, DEST*, FIFO, FIFOVER, SERVID, NR?, PRODID+, DATESENT?, TIMESENT?, UNO?, RECVER, TEXTTYP, SLUGG, EDSTAT?, URG, SUBREF*, FIXID?, KEYWORD*, SPECIAL?, ACTADV?, HEADLINE, HSOURCE, CAPTION?, WRITER, LANG, EMBARGODATETIME?, TAKE?, REFUNO*, SIZEMODE, MAXSUBSIZE, SIZEANNO,SPEKMETA?)>
+<!--IIM RECORD SET 1, 2 and 7-->
+<!ELEMENT HEADLINE (#PCDATA)>
+<!-- 2:105 Headline-->
+<!ELEMENT HF (#PCDATA)>
+<!-- Forlorade matcher hemma --> 
+<!ELEMENT HFS (#PCDATA)>
+<!-- Forlorade matcher hemma efter sudden--> 
+<!ELEMENT HFSS (#PCDATA)>
+<!-- Forlorade matcher hemma efter straffar--> 
+<!ELEMENT HG (#PCDATA)>
+<!-- Gjorda mal hemma --> 
+<!ELEMENT HI (#PCDATA)>
+<!-- Inslappta mal hemma --> 
+<!ELEMENT hl1 (#PCDATA)>
+<!-- ny hogsta/lagsta notering i HILO-->
+<!ELEMENT hl2 (#PCDATA)>
+<!-- senaste hogsta/lagsta notering i HILO-->
+<!ELEMENT HLAG (#PCDATA)>
+<!-- Namn pa hemmalag i ett matchresultat--> 
+<!ELEMENT hnamn (#PCDATA)>
+<!-- namntagg i HILO--> 
+<!ELEMENT HO (#PCDATA)>
+<!-- -avgjorda matcher hemma --> 
+<!ELEMENT HRES (#PCDATA)>
+<!-- Hemmares i ett matchresultat--> 
+<!ELEMENT HSOURCE (#PCDATA)>
+<!-- 2:115 Source Identifier-->
+<!ELEMENT ht (#PCDATA)>
+<!--  BetHo9798 i TEO--> 
+<!ELEMENT hu (#PCDATA)>
+<!--  hundra i NUMF--> 
+<!ELEMENT HV (#PCDATA)>
+<!-- Vunna matcher hemma --> 
+<!ELEMENT HVS (#PCDATA)>
+<!-- Vunna matcher hemma efter sudden--> 
+<!ELEMENT HVSS (#PCDATA)>
+<!-- Vunna matcher hemma efter straffar--> 
+<!ELEMENT IM (#PCDATA)>
+<!-- Inslappta mal totalt --> 
+<!ELEMENT inamn (#PCDATA)>
+<!-- namntagg i INDEX--> 
+<!ELEMENT INGRESS (P | CITAT)*>
+<!--En texts ingress-->
+<!ELEMENT inx (#PCDATA)>
+<!-- Index i INDEX samt losenpris i OPT-->
+<!ELEMENT kd (#PCDATA)>
+<!-- konv fran i KON--> 
+<!ELEMENT kk (#PCDATA)>
+<!-- kopkurs i OPT-->
+<!ELEMENT KEYWORD (#PCDATA)>
+<!-- Eventuella nyckelord-->
+<!ELEMENT knamn (#PCDATA)>
+<!-- namntagg i KONV--> 
+<!ELEMENT ko (#PCDATA)>
+<!-- BAKTIE jag antar att det ar krysset for split mm-->
+<!ELEMENT kr (#PCDATA)>
+<!-- kopranta i OBL--> 
+<!ELEMENT ku (#PCDATA)>
+<!-- kurs i VAL--> 
+<!ELEMENT kv (#PCDATA)>
+<!-- konvkurs i KON--> 
+<!ELEMENT la (#PCDATA)>
+<!-- La i TEO-->
+<!ELEMENT LAG (#PCDATA)>
+<!-- Lagets namn --> 
+<!ELEMENT LANG (#PCDATA)>
+<!-- 2:135 Language-->
+<!ELEMENT lb (#PCDATA)>
+<!-- 9798lagst i AKTIE-->
+<!ELEMENT LI (#PCDATA)>
+<!-- En rad i en punktlista-->
+<!ELEMENT MAXSUBSIZE (#PCDATA)>
+<!-- 7:20 Max subfile size tags inclusive-->
+<!ELEMENT MELLIS (#PCDATA)>
+<!-- mellanrubrik i brodtext-->
+<!ELEMENT MODVER EMPTY>
+<!-- 1:00 Model Version-->
+<!ELEMENT NAME (#PCDATA)>
+<!-- En persons namn i ett detaljerat os-resultat -->
+<!ELEMENT nav (#PCDATA)>
+<!-- navkurs i FOND--> 
+<!ELEMENT no (#PCDATA)>
+<!-- oms i KON, nom oms i OBL--> 
+<!ELEMENT NR (#PCDATA)>
+<!-- 1:40 Envelope Number-->
+<!ELEMENT ob (#PCDATA)>
+<!-- Omsattningsbelopp--> 
+<!ELEMENT ok (#PCDATA)>
+<!-- konvkurs i OBL-->
+<!ELEMENT onamn (#PCDATA)>
+<!-- namntagg i OBL--> 
+<!ELEMENT OM (#PCDATA)>
+<!-- oavgjorda matcher totalt --> 
+<!ELEMENT OPTION (#PCDATA)>
+<!-- Namn pa option i optionstabellerna-->
+<!ELEMENT ORT (#PCDATA)>
+<!-- ortnamnet i en dateringsrad. From februari 2015 anger den vinjettord -->
+<!ELEMENT P (#PCDATA|DUEL|PERSON)*>
+<!-- Paragraphs of text-->
+<!ELEMENT pa (#PCDATA)>
+<!-- ar i PRE --> 
+<!ELEMENT PERSON (PLAC,NAME,COUNTRY,RESULT)>
+<!-- En person i ett detaljerat os-resultat -->
+<!ELEMENT ph (#PCDATA)>
+<!-- per hundra kronor i VAL--> 
+<!ELEMENT pk (#PCDATA)>
+<!--  kopkurs i  PRE-->
+<!ELEMENT PLAC (#PCDATA)>
+<!-- En persons placering i ett detaljerat os-resultat -->
+<!ELEMENT PRODID EMPTY>
+<!-- 1:50 Product I.D. Inr, utr osv-->
+<!ELEMENT PT (#PCDATA)>
+<!-- Poang totalt --> 
+<!ELEMENT ra (#PCDATA)>
+<!-- ranta i KON --> 
+<!ELEMENT RECVER EMPTY>
+<!--  2:00 Record Version-->
+<!ELEMENT REFUNO (#PCDATA)>
+<!-- 6:250 Anvandardefinierat falt i IIM-->
+<!ELEMENT RES (RESVAR?, RESVAD?, RESTXT)>
+<!-- Ett enskilt resultat-->
+<!ELEMENT RESEPA (EPAVAR?, EPAVAD?, HLAG, BLAG, HRES, BRES, EPAPER?, EPAFAKTA?, EPATEXT?)>
+<!-- Ett enskilt matchresultat-->
+<!ELEMENT RESTAB (TABRUB?, TABELL, TABINFO?)>
+<!-- Enklare sporttabell enligt vanling tabell-modell-->
+<!ELEMENT RESTXT (P+)>
+<!-- Sjalva resultatet uppdelat i stycken-->
+<!ELEMENT RESULT (#PCDATA)>
+<!-- En persons resultat i ett detaljerat os-resultat -->
+<!ELEMENT RESVAD (#PCDATA|RESSORT|RESTYP|RESDISCIPLINE|RESSTAGE)*>
+<!-- Vilken gren,klass osv ett enskilt resultat galler-->
+<!ELEMENT RESDISCIPLINE (#PCDATA)>
+<!-- gren-delen i en RESVAD-->
+<!ELEMENT RESSORT (#PCDATA)>
+<!-- SORT-delen (Herrar, Damer, Mixed) i en RESVAD-->
+<!ELEMENT RESSTAGE (#PCDATA)>
+<!-- STAGE-delen i en RESVAD-->
+<!ELEMENT RESTYP (#PCDATA)>
+<!-- TYP-delen (lag, individuellt osv) i en RESVAD-->
+<!ELEMENT RESVAR (#PCDATA)>
+<!-- Vilken plats ett enskilt resultat galler-->
+<!ELEMENT RUBBE (RUBBERUBRIK, RUBBETEXT)>
+<!-- Rubriknyhet-->
+<!ELEMENT RUBBERUBRIK (#PCDATA)>
+<!-- Rubrik pa en rubriknyhet-->
+<!ELEMENT RUBBETEXT (P+)>
+<!-- Text i en rubriknyhet-->
+<!ELEMENT RUBRIK (#PCDATA)>
+<!-- Rubrik pa en text-->
+<!ELEMENT sa (#PCDATA)>
+<!-- Salj i AKTIE, KON, TEO--> 
+<!ELEMENT sb (#PCDATA)>
+<!-- Bet i PRE--> 
+<!ELEMENT SERIETAB (TABRUB*, SHEAD?, (STAB | SPLINJE)*, TABINFO?)>
+<!-- Grundelementet for sport tabeller med kanda falt.-->
+<!ELEMENT SERVID (#PCDATA)>
+<!-- 1:30 Service Identifier-->
+<!ELEMENT SHEAD (SPHR+)>
+<!-- Header for sporttabeller--> 
+<!ELEMENT SIZEANNO (#PCDATA)>
+<!-- 7:90 Size of the objectdata without tags-->
+<!ELEMENT SIZEMODE EMPTY>
+<!-- 7:10 Size mode-->
+<!ELEMENT sk (#PCDATA)>
+<!-- saljkurs i OPT,OBL, Salj i PRE--> 
+<!ELEMENT sl (#PCDATA)>
+<!-- slut man i OPT--> 
+<!ELEMENT SLUGG (#PCDATA)>
+<!-- 2:05 Object Name-->
+<!ELEMENT SM (#PCDATA)>
+<!-- Spelade matcher totalt --> 
+<!ELEMENT SOURCE (#PCDATA)>
+<!-- Kallan i en dateringsrad-->
+<!ELEMENT SPECIAL (#PCDATA)>
+<!-- 2:40 Special Instructions-->
+<!ELEMENT SPEKMETA (DEPARTMENTS,WEEKNUMBER?)>
+<!--  Speciellt metadata för Spektras avdelningar -->
+<!ELEMENT SPGREN (#PCDATA)>
+<!-- Vilken sportgren det handlar om-->
+<!ELEMENT SPHR (LAG, HV?, HVS?, HVSS?, HO?, HFS?, HF?, HFS?, HFSS?, HG?, HI?, BV?, BVS?, BVSS?, BO?, BFS?, BF?, BFS?, BFSS?, BG?, BI?, SM, VM, VMS?, VSS?, OM?,FMS?, FM,FMS?, FSS?, GM, IM, PT)>
+<!-- En rad i en sporttabell.-->
+<!ELEMENT SPLINJE EMPTY>
+<!-- Tomt element med attribut for att lagga in en linje-->
+<!ELEMENT SPORTRES (SPGREN, SPVAR?, SPVAD?, (BLANKRAD | RES | RESEPA | RESTAB | SERIETAB)*)>
+<!--Fil med sportresultat i body-delen pa en TTT-fil-->
+<!ELEMENT SPTR (LAG, HV?, HVS?, HVSS?, HO?, HFS?, HF?, HFS?, HFSS?, HG?, HI?, BV?, BVS?, BVSS?, BO?, BFS?, BF?, BFS?, BFSS?, BG?, BI?, SM, VM, VMS?, VSS?, OM?,FMS?, FM,FMS?, FSS?, GM, IM, PT)>
+<!-- En rad i en sporttabell.-->
+<!ELEMENT SPVAD (#PCDATA)>
+<!-- Vilken tavling det handlar om-->
+<!ELEMENT SPVAR (#PCDATA)>
+<!-- Vilken plats det handlar om-->
+<!ELEMENT sr (#PCDATA)>
+<!-- saljranta i OBL--> 
+<!ELEMENT STAB (SPTR+)>
+<!--Sjalva tabelldelen i sporttabeller-->
+<!ELEMENT SUBREF (#PCDATA)>
+<!-- 2:12 Subject reference-->
+<!ELEMENT SVAR (#PCDATA)>
+<!--  Svar på en direkt fråga i BRODTEXT -->
+<!ELEMENT TABELL (TR | SPLINJE)*>
+<!-- Enklare odefinierad tabell i brodtext-->
+<!ELEMENT TABINFO (P*)>
+<!-- Extra information under en tabell-->
+<!ELEMENT TABRUB (#PCDATA)>
+<!-- Anger numret om innehållet är ett take -->
+<!ELEMENT TAKE (#PCDATA) >
+<!-- Information om en tabell-->
+<!ELEMENT TD (#PCDATA)>
+<!-- Datafalt i enklare tabell-->
+<!ELEMENT TEXT (RUBRIK?, DAT?, INGRESS?, BRODTEXT?, BYLINE*, BILD*)>
+<!ELEMENT FAKTATEXT (RUBRIK?, DAT?, INGRESS?, BRODTEXT?, BYLINE*, BILD*)>
+<!ELEMENT BAKGRUNDTEXT (RUBRIK?, DAT?, INGRESS?, BRODTEXT?, BYLINE*, BILD*)>
+<!--A typical text-->
+<!ELEMENT TEXTTYP (#PCDATA)>
+<!-- 2:03 Typ av text-->
+<!ELEMENT TH (#PCDATA)>
+<!-- Headerfalt i enklare tabell-->
+<!ELEMENT thb (#PCDATA)>
+<!-- 9798hogst i TEO --> 
+<!ELEMENT TIMESENT (#PCDATA)>
+<!-- 1:80 Time Sent obligatorisk vid utsandning.-->
+<!ELEMENT tj (#PCDATA)>
+<!-- tjugo i NUMF--> 
+<!ELEMENT tk (#PCDATA)>
+<!-- Teckningskurs i TEO-->
+<!ELEMENT tnamn (#PCDATA)>
+<!-- namntagg i TEO--> 
+<!ELEMENT TR (TH+ | TD+)>
+<!-- Enklare tabellrader-->
+<!ELEMENT TTNITF (HEAD, BODY, ENDSIZE)>
+<!--Overall element for a TT NITF file-->
+<!ELEMENT ub (#PCDATA)>
+<!-- Utdelningsbelopp av en sort--> 
+<!ELEMENT ud (#PCDATA)>
+<!-- sen utd i AKTIE-->
+<!ELEMENT UL (LI+)>
+<!-- Punktlistor for faktarutor mm-->
+<!ELEMENT unamn (#PCDATA)>
+<!-- namn pa aktier i UTLAKT--> 
+<!ELEMENT UNO (#PCDATA)>
+<!-- 1:100 UNique name of object-->
+<!ELEMENT URG EMPTY>
+<!-- 2:10 Urgency-->
+<!ELEMENT utb (#PCDATA)>
+<!-- utdelningsbelopp i FOND--> 
+<!ELEMENT utd (#PCDATA)>
+<!-- utdelningsdag i FOND--> 
+<!ELEMENT va (#PCDATA)>
+<!-- valutaslag i INDEX, VAL--> 
+<!ELEMENT WEEKNUMBER (#PCDATA)>
+<!-- Veckonummer i SPEKMETA  -->
+<!ELEMENT VM (#PCDATA)>
+<!-- Vunna matcher totalt --> 
+<!ELEMENT VMS (#PCDATA)>
+<!-- Vunna matcher totalt efter sudden--> 
+<!ELEMENT VSS (#PCDATA)>
+<!-- Vunna matcher totalt efter straffslagning--> 
+<!ELEMENT vo (#PCDATA)>
+<!-- vol i OPT--> 
+<!ELEMENT vrr (#PCDATA)>
+<!-- Villor rorlig ranta i BORA-->
+<!ELEMENT vr1 (#PCDATA)>
+<!-- Villor ettars ranta i BORA-->
+<!ELEMENT vr2 (#PCDATA)>
+<!-- Villor tvaars ranta i BORA-->
+<!ELEMENT vr5 (#PCDATA)>
+<!-- Villor femars ranta i BORA-->
+<!ELEMENT vr10 (#PCDATA)>
+<!-- Villor tioars ranta i BORA-->
+<!ELEMENT WRITER (#PCDATA)>
+<!-- 2:122 Caption/Story Writer-->
+<!--*********************************************************************-->
+<!-- SHARED DECLARATIONS                                                --> 
+<!--*********************************************************************-->
+<!--*********************************************************************-->
+<!-- ATTRIBUTE DEFINITION LISTS                                         --> 
+<!--*********************************************************************-->
+<!ATTLIST ACTADV
+	ACTION (01 | 02 | 03 | 04) "02"
+	ID CDATA "2:42"
+>
+<!ATTLIST anamn
+	ISIN CDATA ""
+>
+<!ATTLIST hnamn
+	ISIN CDATA ""
+>
+<!ATTLIST knamn
+	ISIN CDATA ""
+>
+<!ATTLIST onamn
+	ISIN CDATA ""
+>
+<!ATTLIST tnamn
+	ISIN CDATA ""
+>
+<!ATTLIST BLAG
+	LAGID CDATA ""
+	MATCHPOINT CDATA ""
+	GRUPPID CDATA ""
+	KONFERENSID CDATA ""
+	SERIEID CDATA ""
+>
+<!ATTLIST BODY
+	ID CDATA "8:10"
+>
+<!ATTLIST BYLINE
+	EPOST CDATA ""
+>
+<!ATTLIST CAPTION
+	ID CDATA "2:120"
+>
+<!ATTLIST DATESENT
+	ID CDATA "1:70"
+>
+<!ATTLIST DEST
+	ID CDATA "1:05"
+>
+<!ATTLIST EDSTAT
+	ID CDATA "2:07"
+>
+<!ATTLIST EKOTABELL
+	BTYP (OPT | INDEX | AKTIE | FOND | KON | OBL | BORA | TEO | PRE | NUMF | UTLAKT | VAL) "AKTIE"
+	BNR (201 | 202 | 203 | 204 | 205 | 206 | 207 | 208 | 211 | 212 | 213 | 214 | 215 | 216 | 218 | 221 | 223 | 224 | 241 | 242 | 250 | 252 | 401 | 402 | 403 | 404 | 410 | 412 | 414 | 416 | 420 | 422 | 424 | 426 | 428 | 430 | 432 | 434 | 440) "201"
+>
+<!-- Individuellt nummer for varje tabell-->
+<!ATTLIST ENDSIZE
+	ID CDATA "9:10"
+>
+<!ATTLIST FIFO
+	FFNO (25 | 27) "27"
+	ID CDATA "1:20"
+>
+<!ATTLIST FIFOVER
+	FFVERNO (01 | 02 | 03) "03"
+	ID CDATA "1:22"
+>
+<!ATTLIST fnamn
+	FNR CDATA ""
+>
+<!ATTLIST FIXID
+	ID CDATA "2:22"
+>
+<!ATTLIST HEADLINE
+	ID CDATA "2:105"
+>
+<!ATTLIST HLAG
+	LAGID CDATA ""
+	MATCHPOINT CDATA ""
+	GRUPPID CDATA ""
+	KONFERENSID CDATA ""
+	SERIEID CDATA ""
+>
+<!ATTLIST HSOURCE
+	ID CDATA "2:115"
+>
+<!ATTLIST KEYWORD
+	ID CDATA "2:25"
+>
+<!ATTLIST LAG
+	NOT CDATA ""
+	LAGID CDATA ""
+	GRUPPID CDATA ""
+	KONFERENSID CDATA ""
+	SERIEID CDATA ""
+>
+<!ATTLIST LANG
+	ID CDATA "2:135"
+>
+<!ATTLIST MAXSUBSIZE
+	ID CDATA "7:20"
+>
+<!ATTLIST MODVER
+	ID CDATA "1:00"
+	VER (03 | 04) "04"
+>
+<!ATTLIST NAME
+	TYPE CDATA ""
+>
+<!ATTLIST NR
+	ID CDATA "1:40"
+>
+<!ATTLIST PLAC
+	MEDAL CDATA ""
+	QVAL CDATA ""
+>
+<!ATTLIST PRODID
+	ID CDATA "1:50"
+	TKOD (INR | UTR | EKO | SPT | SPR | TTL | OBL | TPM | BOR | BBO | BOT | TBL | PRM | RED | LOT | VAL | FAM | FEA | OVR | KLT | NOJ) "INR"
+>
+<!ATTLIST RECVER
+	ID CDATA "2:00"
+	VERNO (03 | 04) "04"
+>
+<!ATTLIST REFUNO
+	ID CDATA "6:250"
+>
+<!ATTLIST RES
+	RESID CDATA ""
+>
+<!ATTLIST RESEPA
+	MATCHID CDATA ""
+	MATCHDATUM CDATA ""
+	OMGNR CDATA ""
+	MATCHSLUT (NORMAL | EXTRATID | STRAFF | LOTT) "NORMAL"
+>
+<!ATTLIST RESULT
+	RECORD CDATA ""
+>
+<!ATTLIST RESVAD
+	FORTS (Nej | Ja) "Nej"
+>
+<!ATTLIST EPAVAD
+	FORTS (Nej | Ja) "Nej"
+>
+<!ATTLIST RUBBE
+	ID CDATA ""
+	ALLMI (0 | 1 | 2 | 3) "0"
+	ALLMU (0 | 1 | 2 | 3) "0"
+	EKO (0 | 1 | 2 | 3) "0"
+	SPT (0 | 1 | 2 | 3) "0"
+	SPEL (0 | 1 | 2 | 3) "0"
+	IT (0 | 1 | 2 | 3) "0"
+	BNG (0 | 1 | 2 | 3) "0"
+	FRC (0 | 1 | 2 | 3) "0"
+	KLT (0 | 1 | 2 | 3) "0"
+	NOJ (0 | 1 | 2 | 3) "0"
+	MTR (0 | 1 | 2 | 3) "0"
+	MDE (0 | 1 | 2 | 3) "0"
+	REFNR CDATA ""
+>
+<!ATTLIST SERIETAB
+	GRUPPID CDATA ""
+	KONFERENSID CDATA ""
+	SERIEID CDATA ""
+>
+<!ATTLIST SERVID
+	ID CDATA "1:30"
+>
+<!ATTLIST SIZEANNO
+	ID CDATA "7:90"
+>
+<!ATTLIST SIZEMODE
+	ID CDATA "7:10"
+	SIZMOD (0 | 1) "0"
+>
+<!ATTLIST SLUGG
+	ID CDATA "2:05"
+>
+<!ATTLIST SPECIAL
+	ID CDATA "2:40"
+>
+<!ATTLIST SPLINJE
+	LVAD (Slutspel | Uppflytt | Kvalned | KvalUpp | Nedflytt | Annan) "Annan"
+>
+<!ATTLIST SPVAD
+	FORTS (Nej | Ja) "Nej"
+	SERIEID CDATA ""
+	SID CDATA ""
+	SNAMN CDATA ""
+>
+<!ATTLIST SUBREF
+	ID CDATA "2:12"
+>
+<!ATTLIST TEXT
+	SUBSIZE CDATA ""
+>
+<!ATTLIST TEXTTYP
+	ID CDATA "2:03"
+>
+<!ATTLIST TIMESENT
+	ID CDATA "1:80"
+>
+<!ATTLIST UNO
+	ID CDATA "1:100"
+>
+<!ATTLIST URG
+	ID CDATA "2:10"
+	PRIO (1 | 2 | 3 | 4 | 5) "5"
+>
+<!ATTLIST WRITER
+	ID CDATA "2:122"
+>
+<!--                                                                    --> 
